@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=5
+#SBATCH --nodes=1
+#SBATCH --partition=gpu-long
+#SBATCH --job-name=largeSigma-Swish
+#SBATCH --mem-per-cpu=4G
+#SBATCH --mail-user=bukva@lorentz.leidenuniv.nl
+#SBATCH --mail-type=END
+#SBATCH --gres=gpu:1
+
+module load TensorFlow/2.4.1-fosscuda-2020b
+
+python accuracy.py
